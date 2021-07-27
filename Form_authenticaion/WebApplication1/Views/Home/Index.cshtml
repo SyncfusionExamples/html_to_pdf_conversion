@@ -1,0 +1,17 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Convert Secured Web Page to PDF</h1>
+    <p>Learn about <a href="https://help.syncfusion.com/file-formats/pdf/convert-html-to-pdf/blink"> HTML to PDF converter</a>.</p>
+    @{Html.BeginForm("ExportToPDF", "Home", FormMethod.Post);
+        {
+            <div>
+                <input type="submit" value="Convert PDF" style="width:150px;height:27px" />
+            </div>
+        }
+        Html.EndForm();
+    }
+<p>After succussful registration, You can click the above button to convert authenticated web page into the PDF document.</p>
+</div>
