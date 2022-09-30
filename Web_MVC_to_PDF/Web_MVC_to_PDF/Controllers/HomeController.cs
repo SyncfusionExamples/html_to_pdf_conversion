@@ -42,13 +42,10 @@ namespace Web_MVC_to_PDF.Controllers
         {
 
             //Initialize HTML to PDF converter with Blink rendering engine 
-            HtmlToPdfConverter htmlConverter = new HtmlToPdfConverter(HtmlRenderingEngine.Blink);
+            HtmlToPdfConverter htmlConverter = new HtmlToPdfConverter();
 
             BlinkConverterSettings settings = new BlinkConverterSettings();
             settings.ViewPortSize = new Syncfusion.Drawing.Size(1440, 0);
-
-            //Set the BlinkBinaries folder path 
-            settings.BlinkPath = Path.Combine(_hostingEnvironment.ContentRootPath, "BlinkBinariesWindows");
 
             //Assign Blink settings to HTML converter
             htmlConverter.ConverterSettings = settings;

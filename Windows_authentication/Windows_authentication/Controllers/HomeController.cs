@@ -42,13 +42,11 @@ namespace Windows_authentication.Controllers
         public IActionResult ExportToPDF()
         {
             //Initialize HTML to PDF converter with Blink rendering engine 
-            HtmlToPdfConverter htmlConverter = new HtmlToPdfConverter(HtmlRenderingEngine.Blink);
+            HtmlToPdfConverter htmlConverter = new HtmlToPdfConverter();
 
+            //Initialize converter settings and set viewport size
             BlinkConverterSettings settings = new BlinkConverterSettings();
             settings.ViewPortSize = new Syncfusion.Drawing.Size(1440, 0);
-
-            //Set the BlinkBinaries folder path 
-            settings.BlinkPath = Path.Combine(_hostingEnvironment.ContentRootPath, "BlinkBinariesWindows");
 
             //Assign Blink settings to HTML converter
             htmlConverter.ConverterSettings = settings;
@@ -60,7 +58,11 @@ namespace Windows_authentication.Controllers
 
             //Convert URL to PDF
             PdfDocument document = htmlConverter.Convert(url);
+
+            //Creates memory stream 
             MemoryStream stream = new MemoryStream();
+
+            //Save the PDF document 
             document.Save(stream);
             return File(stream.ToArray(), System.Net.Mime.MediaTypeNames.Application.Pdf, "MVC_view_to_PDF.pdf");
         }
