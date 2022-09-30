@@ -50,7 +50,7 @@ namespace WebApplication1.Controllers
             }
 
             //Initialize HTML to PDF converter with Blink rendering engine 
-            HtmlToPdfConverter htmlConverter = new HtmlToPdfConverter(HtmlRenderingEngine.Blink);
+            HtmlToPdfConverter htmlConverter = new HtmlToPdfConverter();
 
             BlinkConverterSettings settings = new BlinkConverterSettings();
 
@@ -58,9 +58,6 @@ namespace WebApplication1.Controllers
 
             //Add cookies as name and value pair
             settings.Cookies.Add(cookieName, cookieValue);
-
-            //Set the BlinkBinaries folder path 
-            settings.BlinkPath = Path.Combine(_hostingEnvironment.ContentRootPath, "BlinkBinariesWindows");
 
             //Assign Blink settings to HTML converter
             htmlConverter.ConverterSettings = settings;

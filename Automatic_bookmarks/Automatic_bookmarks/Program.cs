@@ -13,12 +13,9 @@ namespace Automatic_bookmarks
         static void Main(string[] args)
         {
             //Initialize HTML to PDF converter with Blink rendering engine
-            HtmlToPdfConverter htmlConverter = new HtmlToPdfConverter(HtmlRenderingEngine.Blink);
+            HtmlToPdfConverter htmlConverter = new HtmlToPdfConverter();
 
             BlinkConverterSettings blinkConverterSettings = new BlinkConverterSettings();
-
-            //Set the BlinkBinaries folder path
-            blinkConverterSettings.BlinkPath = @"../../../../../BlinkBinariesWindows/";
 
             //Enable automatic bookmark creation
             blinkConverterSettings.EnableBookmarks = true;
@@ -26,7 +23,7 @@ namespace Automatic_bookmarks
             //Assign Blink converter settings to HTML converter
             htmlConverter.ConverterSettings = blinkConverterSettings;
 
-            //Convert HTML File to PDF
+            //Convert HTML File to PDF document
             PdfDocument document = htmlConverter.Convert("https://help.syncfusion.com/file-formats/pdf/convert-html-to-pdf/blink");
 
             FileStream fileStream = new FileStream("bookmark_creation.pdf", FileMode.OpenOrCreate, FileAccess.ReadWrite);
