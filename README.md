@@ -11,7 +11,7 @@ Sample Name | Description
 [HTML forms to fillable PDF forms](https://github.com/SyncfusionExamples/html_to_pdf_conversion/tree/main/Html_form_to_PDF_form) | Using Syncfusion HTML to PDF converter library users can easily convert the web form fields to an interactive form fields. 
 [URL to PDF](https://github.com/SyncfusionExamples/html_to_pdf_conversion/tree/main/URL_to_PDF) | Using Syncfusion HTML to PDF converter library users can easily convert existing URL to PDF document. 
 [Convert Web MVC view to PDF](https://github.com/SyncfusionExamples/html_to_pdf_conversion/tree/main/Web_MVC_to_PDF) | Using Syncfusion HTML to PDF converter library users can easily convert ASP.NET Core MVC view to PDF document. 
-[Convert Web Razor page to PDF](https://www.syncfusion.com/blogs/post/html-to-pdf-conversion-in-csharp.aspx#convert-asp-net-core-web-razor-page-to-pdf) |  Using Syncfusion HTML to PDF converter library users can easily convert the ASP.NET core Razor pages to PDF document. 
+[Convert Web Razor page to PDF](https://github.com/SyncfusionExamples/html_to_pdf_conversion/tree/EJDOTNETCORE-4232-Update-README-file/Web_to_PDF) |  Using Syncfusion HTML to PDF converter library users can easily convert the ASP.NET core Razor pages to PDF document. 
 [Windows Authentication](https://github.com/SyncfusionExamples/html_to_pdf_conversion/tree/main/Windows_authentication) | The webpage users want to convert may be protected with Windows authentication. The Blink rendering engine provides support for converting Windows authenticated webpages to a PDF document by providing the username and password. 
 
 # How to run the examples
