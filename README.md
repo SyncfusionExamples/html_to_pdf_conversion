@@ -3,11 +3,11 @@ The Syncfusion [HTML to PDF converter](https://www.syncfusion.com/document-proce
 
 Sample Name | Description 
 --- | --- 
-[Automatic bookmark hierarchy](https://github.com/SyncfusionExamples/html_to_pdf_conversion/tree/main/Automatic_bookmarks) | Bookmark hierarchy can be automatically created in the resultant PDF document when converting HTML to PDF. 
-[Automatic TOC](https://github.com/SyncfusionExamples/html_to_pdf_conversion/tree/main/Automatic_toc_creation) | TOC can be automatically created in the resultant PDF document when converting HTML to PDF. 
-[Form Authentication](https://github.com/SyncfusionExamples/html_to_pdf_conversion/tree/main/Form_authenticaion) | Syncfusion HTML to PDF converter library can convert web pages which uses the ASP.NET form authentication mechanism to login. 
-[HTML File to PDF](https://github.com/SyncfusionExamples/html_to_pdf_conversion/tree/main/HTML_File_To_PDF) | Syncfusion HTML to PDF converter library can convert HTML files with images, CSS, forms, hyperlinks, and JavaScript to PDF document. 
-[Headers and Footers](https://github.com/SyncfusionExamples/html_to_pdf_conversion/tree/main/Headers_and_Footers) | Users can place common content (text, images, shapes, page numbers and hyperlinks) applicable for all the pages either in the header or the footer. 
+[Automatic bookmark hierarchy](https://github.com/SyncfusionExamples/html_to_pdf_conversion/tree/main/Automatic_bookmarks) | Automatically create bookmark hierarchy when converting HTML to PDF document. 
+[Automatic TOC](https://github.com/SyncfusionExamples/html_to_pdf_conversion/tree/main/Automatic_toc_creation) | Automatically create TOC when converting HTML to PDF document. 
+[Form Authentication](https://github.com/SyncfusionExamples/html_to_pdf_conversion/tree/main/Form_authenticaion) | Convert web pages to PDF document which uses the ASP.NET form authentication mechanism to login. 
+[HTML File to PDF](https://github.com/SyncfusionExamples/html_to_pdf_conversion/tree/main/HTML_File_To_PDF) | Convert HTML files with images, CSS, forms, hyperlinks, and JavaScript to PDF document. 
+[Headers and Footers](https://github.com/SyncfusionExamples/html_to_pdf_conversion/tree/main/Headers_and_Footers) | Add header and footer when converting HTML to PDF document.  
 [HTML forms to fillable PDF forms](https://github.com/SyncfusionExamples/html_to_pdf_conversion/tree/main/Html_form_to_PDF_form) | Convert the web form fields to an interactive form fields. 
 [URL to PDF](https://github.com/SyncfusionExamples/html_to_pdf_conversion/tree/main/URL_to_PDF) | Convert existing URL to PDF document. 
 [Convert Web MVC view to PDF](https://github.com/SyncfusionExamples/html_to_pdf_conversion/tree/main/Web_MVC_to_PDF) | Convert ASP.NET Core MVC view to PDF document. 
