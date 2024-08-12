@@ -18,7 +18,7 @@ namespace Syncfusion_HTMLtoPDF.Controllers
         {
             return View();
         }
-        public IActionResult ExportToPDF()
+        public IActionResult ConvertToPdf()
         {
 
             string fileName = "HtmlSample_Thousand";
