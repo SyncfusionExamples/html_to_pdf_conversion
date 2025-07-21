@@ -5,7 +5,8 @@
 <div class="jumbotron">
     <h1>Syncfusion MVC view to PDF Converter</h1>
     <p class="lead">Syncfusion HTML to PDF converter can be easily integrated into any application with five simple lines of code. Using this library, you can turn an entire webpage into a PDF file. Or just convert a portion of the page. Your PDF will just look like the webpage you converted—it preserves all graphics, images, text, fonts, links, and the layout of the original HTML document or webpage.</p>
-    @{Html.BeginForm("ExportToPDF", "Home", FormMethod.Post);
+    @{
+        Html.BeginForm("ExportToPDF", "Home", FormMethod.Post);
         {
             <div>
                 <input type="submit" value="Convert PDF" style="width:150px;height:27px" />
@@ -44,3 +45,4 @@
         </p>
     </div>
 </div>
+

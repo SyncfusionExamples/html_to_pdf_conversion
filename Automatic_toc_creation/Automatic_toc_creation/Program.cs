@@ -17,7 +17,7 @@ namespace Automatic_toc_creation
 
             BlinkConverterSettings blinkConverterSettings = new BlinkConverterSettings();
 
-            //Enable automati TOC creation
+            //Enable automatic TOC creation
             blinkConverterSettings.EnableToc = true;
 
             //Set the style for level 1(H1) items in table of contents
@@ -42,6 +42,7 @@ namespace Automatic_toc_creation
             //Save and close the PDF document 
             document.Save(fileStream);
             document.Close(true);
+            htmlConverter.Close();
         }
     }
 }
