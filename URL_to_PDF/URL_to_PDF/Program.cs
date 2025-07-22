@@ -22,10 +22,8 @@ namespace URL_to_PDF
             //Convert existing URL to PDF
             PdfDocument document = htmlConverter.Convert("https://www.syncfusion.com/");
 
-            FileStream fileStream = new FileStream("URL_to_PDF.pdf", FileMode.OpenOrCreate, FileAccess.ReadWrite);
-
             //Save and close the PDF document 
-            document.Save(fileStream);
+            document.Save("URL_to_PDF.pdf");
             document.Close(true);
         }
     }

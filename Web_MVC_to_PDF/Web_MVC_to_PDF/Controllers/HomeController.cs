@@ -1,25 +1,18 @@
-﻿using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Syncfusion.HtmlConverter;
 using Syncfusion.Pdf;
-using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.IO;
-using System.Linq;
-using System.Threading.Tasks;
 using Web_MVC_to_PDF.Models;
 
 namespace Web_MVC_to_PDF.Controllers
 {
     public class HomeController : Controller
     {
+        private readonly ILogger<HomeController> _logger;
 
-        private readonly IHostingEnvironment _hostingEnvironment;
-
-        public HomeController(IHostingEnvironment hostingEnvironment)
+        public HomeController(ILogger<HomeController> logger)
         {
-            _hostingEnvironment = hostingEnvironment;
+            _logger = logger;
         }
 
         public IActionResult Index()
@@ -40,27 +33,32 @@ namespace Web_MVC_to_PDF.Controllers
 
         public IActionResult ExportToPDF()
         {
-
-            //Initialize HTML to PDF converter with Blink rendering engine 
+            //Initialize HTML to PDF converter with Blink rendering engine
             HtmlToPdfConverter htmlConverter = new HtmlToPdfConverter();
 
-            BlinkConverterSettings settings = new BlinkConverterSettings();
-            settings.ViewPortSize = new Syncfusion.Drawing.Size(1440, 0);
+            BlinkConverterSettings blinkConverterSettings = new BlinkConverterSettings()
+            {
+                ViewPortSize = new Syncfusion.Drawing.Size(1440, 0),
+                Orientation = PdfPageOrientation.Landscape
+            };
 
             //Assign Blink settings to HTML converter
-            htmlConverter.ConverterSettings = settings;
+            htmlConverter.ConverterSettings = blinkConverterSettings;
 
             //Get the current URL
             string url = Microsoft.AspNetCore.Http.Extensions.UriHelper.GetEncodedUrl(HttpContext.Request);
-     
+
             url = url.Substring(0, url.LastIndexOf('/'));
 
             //Convert URL to PDF
             PdfDocument document = htmlConverter.Convert(url);
+
             MemoryStream stream = new MemoryStream();
+            //Close the PDF document and the HTML converter
             document.Save(stream);
+            document.Close(true);
+            htmlConverter.Close();
             return File(stream.ToArray(), System.Net.Mime.MediaTypeNames.Application.Pdf, "MVC_view_to_PDF.pdf");
         }
-
     }
 }

@@ -27,6 +27,7 @@ namespace Html_form_to_PDF_form
             //Save and close the PDF document 
             document.Save(fileStream);
             document.Close(true);
+            htmlConverter.Close();
         }
     }
 }

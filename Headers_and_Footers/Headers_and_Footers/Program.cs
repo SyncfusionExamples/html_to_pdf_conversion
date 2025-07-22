@@ -15,27 +15,26 @@ namespace Headers_and_Footers
             HtmlToPdfConverter htmlConverter = new HtmlToPdfConverter(HtmlRenderingEngine.Blink);
 
             BlinkConverterSettings blinkConverterSettings = new BlinkConverterSettings();
+
+            blinkConverterSettings.ViewPortSize = new Syncfusion.Drawing.Size(794, 1123);           
+
             //Adding header
             blinkConverterSettings.PdfHeader = CreateHeader();
             //Adding footer
             blinkConverterSettings.PdfFooter = CreateFooter();
 
-            //Set the BlinkBinaries folder path
-            blinkConverterSettings.BlinkPath = @"../../../../../BlinkBinariesWindows/";
-
             //Assign Blink converter settings to HTML converter
             htmlConverter.ConverterSettings = blinkConverterSettings;
 
             //Convert HTML File to PDF
-            PdfDocument document = htmlConverter.Convert(Path.GetFullPath("../../../../../Data/html_file_converter.htm"));
-
-
+            PdfDocument document = htmlConverter.Convert(Path.GetFullPath("../../../../../Data/html_file.html"));
 
             FileStream fileStream = new FileStream("Headers_and_Footers.pdf", FileMode.OpenOrCreate, FileAccess.ReadWrite);
 
             //Save and close the PDF document 
             document.Save(fileStream);
             document.Close(true);
+            htmlConverter.Close();
         }
 
         //Create header for HTML to PDF converter
@@ -54,14 +53,12 @@ namespace Headers_and_Footers
 
             SizeF textSize = font.MeasureString(headerText);
 
-            string date = DateTime.Now.ToString("dd/M/yyyy");
-
-            //Create a text field to draw in header
-            PdfCompositeField compositeField = new PdfCompositeField(font, brush, headerText);
             //Drawing text field in header
-            compositeField.Draw(header.Graphics, new PointF((bounds.Width - textSize.Width) / 2, 5));
+            header.Graphics.DrawString(headerText, font, brush, new PointF((bounds.Width - textSize.Width) / 2, 5));
+
             //Drawing date text in header
-            header.Graphics.DrawString(date, font, brush, new PointF(10, 5));
+            header.Graphics.DrawString(DateTime.Now.ToString("dd/M/yyyy"), font, brush, new PointF(10, 5));
+
             //Drawing line in header
             header.Graphics.DrawLine(PdfPens.Gray, new PointF(0, bounds.Height - 2), new PointF(bounds.Width, bounds.Height - 2));
 
@@ -97,7 +94,7 @@ namespace Headers_and_Footers
             //Drawing text field in footer
             compositeField.Draw(footer.Graphics, new PointF((bounds.Width - textSize.Width) / 2, 5));
             //Drawing page number field in footer
-            pageNumberField.Draw(footer.Graphics, new PointF((bounds.Width - 70), 5));
+            pageNumberField.Draw(footer.Graphics, new PointF((bounds.Width - 120), 5));
 
             return footer;
         }
